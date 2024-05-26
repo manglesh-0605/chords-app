@@ -2,8 +2,11 @@ import 'package:chords_app/global/global.dart';
 import 'package:chords_app/res/colors.dart';
 import 'package:chords_app/view/auth/profile/notifications.dart';
 import 'package:chords_app/view/auth/profile/privacy_policy.dart';
+import 'package:chords_app/view/auth/profile/profile_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'support.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -14,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
       {
         "icon": Icons.person_rounded,
         "title": "Personal Details",
-        "onClick": ""
+        "onClick": const ProfileDetails()
       },
       {
         "icon": Icons.notifications_rounded,
@@ -29,7 +32,7 @@ class ProfileScreen extends StatelessWidget {
       {
         "icon": Icons.support_rounded,
         "title": "Customer Support",
-        "onClick": ""
+        "onClick": const SupportScreen()
       },
       {
         "icon": Icons.star_border_rounded,
@@ -114,7 +117,7 @@ class ProfileScreen extends StatelessWidget {
                   tabData.length,
                   (index) => GestureDetector(
                     onTap: () {
-                      if (index == 1 || index == 2) {
+                      if (index != 4) {
                         switchScreenPush(context, tabData[index]['onClick']);
                       }
                     },
@@ -206,7 +209,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               spaceHeight(20.h),
               Container(
-                height: 54.h,
+                height: 40.h,
                 color: AppColors.blackGrey,
                 alignment: Alignment.center,
                 child: Text(

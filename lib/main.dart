@@ -1,5 +1,4 @@
 import 'package:chords_app/res/colors.dart';
-import 'package:chords_app/view/bottom_navigation.dart/navigation_tab.dart';
 
 import 'package:chords_app/view_model/bottom_bar_provider.dart';
 import 'package:chords_app/view_model/onboarding_provider.dart';

@@ -11,6 +11,7 @@ class AppTextField extends StatelessWidget {
   final bool? enabled;
   final bool? obscureText;
   final int? maxLength;
+  final int? maxLines;
   final IconData? icon;
   final Widget? suffixIcon;
   const AppTextField(
@@ -20,6 +21,7 @@ class AppTextField extends StatelessWidget {
       this.enabled,
       this.obscureText = false,
       this.maxLength,
+      this.maxLines = 1,
       this.suffixIcon,
       this.icon,
       super.key});
@@ -35,6 +37,7 @@ class AppTextField extends StatelessWidget {
       obscureText: obscureText!,
       obscuringCharacter: "*",
       maxLength: maxLength,
+      maxLines: maxLines,
       onTapOutside: (event) {
         // FocusScope.of(context).unfocus();
       },
