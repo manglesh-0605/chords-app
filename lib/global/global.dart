@@ -47,6 +47,24 @@ switchScreenReplacement(context, screen) {
   );
 }
 
+switchScreenPushRTL(context, screen) {
+  return Navigator.push(
+    context,
+    PageRouteBuilder(
+      pageBuilder: (context, __, _) {
+        var begin = const Offset(1.0, 0.0);
+        var end = Offset.zero;
+        var tween = Tween(begin: begin, end: end);
+        var offsetAnimation = __.drive(tween);
+        return SlideTransition(position: offsetAnimation, child: screen);
+      },
+      transitionDuration: const Duration(milliseconds: 120), // Duration.zero,
+      reverseTransitionDuration:
+          const Duration(milliseconds: 120), // Duration.zero,
+    ),
+  );
+}
+
 backIcon(BuildContext context) {
   return IconButton(
     icon: const Icon(

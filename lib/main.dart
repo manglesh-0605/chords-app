@@ -1,5 +1,7 @@
 import 'package:chords_app/res/colors.dart';
-import 'package:chords_app/view/splash.dart';
+import 'package:chords_app/view/bottom_navigation.dart/navigation_tab.dart';
+
+import 'package:chords_app/view_model/bottom_bar_provider.dart';
 import 'package:chords_app/view_model/onboarding_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,6 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'global/global.dart';
 import 'view_model/auth_provider.dart';
+import 'view_model/drawer_provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,6 +39,8 @@ class MyApp extends StatelessWidget {
               providers: [
                 ChangeNotifierProvider(create: (_) => OnBoardingProvider()),
                 ChangeNotifierProvider(create: (_) => AuthProvider()),
+                ChangeNotifierProvider(create: (_) => BottomBarProvider()),
+                ChangeNotifierProvider(create: (_) => DrawerProvider()),
               ],
               child: MaterialApp(
                 theme: ThemeData(
@@ -43,9 +48,11 @@ class MyApp extends StatelessWidget {
                       ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                   useMaterial3: true,
                   scaffoldBackgroundColor: AppColors.bgColor,
-                  appBarTheme: const AppBarTheme(
+                  appBarTheme: AppBarTheme(
                       backgroundColor: AppColors.bgColor,
-                      foregroundColor: AppColors.white),
+                      foregroundColor: AppColors.white,
+                      titleTextStyle:
+                          textStyle(fontSize: 26.sp, weight: FontWeight.w600)),
                   inputDecorationTheme: InputDecorationTheme(
                     contentPadding:
                         EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
@@ -76,7 +83,7 @@ class MyApp extends StatelessWidget {
                         color: AppColors.grey),
                   ),
                 ),
-                home: const SplashScreen(),
+                home: const AppBottomBar(),
               ),
             );
           }),
