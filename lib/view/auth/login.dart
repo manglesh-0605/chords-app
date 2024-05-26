@@ -3,6 +3,7 @@ import 'package:chords_app/res/components/app_button.dart';
 import 'package:chords_app/res/components/app_textfiels.dart';
 import 'package:chords_app/view/auth/forgot.dart';
 import 'package:chords_app/view/auth/register.dart';
+import 'package:chords_app/view/bottom_navigation.dart/navigation_tab.dart';
 import 'package:chords_app/view_model/auth_provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,6 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: backIcon(context),
-        centerTitle: true,
         title: Image.asset(
           "assets/images/logo.png",
           width: 180.w,
@@ -95,7 +95,9 @@ class LoginScreen extends StatelessWidget {
               spaceHeight(),
               AppButton(
                 btnText: "Log in",
-                onPress: () {},
+                onPress: () {
+                  switchScreenPush(context, const AppBottomBar());
+                },
               ),
               spaceHeight(10.h),
               Align(

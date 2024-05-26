@@ -1,7 +1,8 @@
 import 'package:chords_app/global/global.dart';
 import 'package:chords_app/res/colors.dart';
+import 'package:chords_app/view/auth/profile/notifications.dart';
+import 'package:chords_app/view/auth/profile/privacy_policy.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -9,10 +10,36 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List tabData = [
+      {
+        "icon": Icons.person_rounded,
+        "title": "Personal Details",
+        "onClick": ""
+      },
+      {
+        "icon": Icons.notifications_rounded,
+        "title": "Notification",
+        "onClick": const NotificationScreen()
+      },
+      {
+        "icon": Icons.policy_rounded,
+        "title": "Privacy Policy",
+        "onClick": const PrivacyPolicy()
+      },
+      {
+        "icon": Icons.support_rounded,
+        "title": "Customer Support",
+        "onClick": ""
+      },
+      {
+        "icon": Icons.star_border_rounded,
+        "title": "Rate the App",
+        "onClick": ""
+      },
+    ];
     return Scaffold(
       appBar: AppBar(
         leading: backIcon(context),
-        centerTitle: true,
         title: const Text("My Profile"),
         actions: [
           Container(
@@ -82,6 +109,112 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
               spaceHeight(20.h),
+              Column(
+                children: List.generate(
+                  tabData.length,
+                  (index) => GestureDetector(
+                    onTap: () {
+                      if (index == 1 || index == 2) {
+                        switchScreenPush(context, tabData[index]['onClick']);
+                      }
+                    },
+                    child: Container(
+                      height: 54.h,
+                      color: AppColors.blackGrey,
+                      margin: EdgeInsets.only(bottom: 10.h),
+                      child: Row(
+                        children: [
+                          spaceWidth(),
+                          Icon(
+                            tabData[index]['icon'],
+                            color: AppColors.white,
+                          ),
+                          spaceWidth(),
+                          Expanded(
+                            child: Text(
+                              tabData[index]['title'],
+                              style: textStyle(
+                                  fontSize: 18.sp, weight: FontWeight.w700),
+                            ),
+                          ),
+                          const Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: AppColors.white,
+                          ),
+                          spaceWidth(),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              spaceHeight(10.h),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 84.h,
+                      color: AppColors.blackGrey,
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Remove Ads",
+                        style: textStyle(weight: FontWeight.w400),
+                      ),
+                    ),
+                  ),
+                  spaceWidth(10.w),
+                  Expanded(
+                    child: Container(
+                      height: 84.h,
+                      color: AppColors.blackGrey,
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Support us",
+                        style: textStyle(weight: FontWeight.w400),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              spaceHeight(10.h),
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      height: 84.h,
+                      color: AppColors.blackGrey,
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Contact Support",
+                        style: textStyle(weight: FontWeight.w400),
+                      ),
+                    ),
+                  ),
+                  spaceWidth(10.w),
+                  Expanded(
+                    child: Container(
+                      height: 84.h,
+                      color: AppColors.blackGrey,
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Contribute",
+                        style: textStyle(weight: FontWeight.w400),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              spaceHeight(20.h),
+              Container(
+                height: 54.h,
+                color: AppColors.blackGrey,
+                alignment: Alignment.center,
+                child: Text(
+                  "Logout",
+                  style: textStyle(weight: FontWeight.w400),
+                ),
+              ),
+              spaceHeight(),
             ],
           ),
         ),

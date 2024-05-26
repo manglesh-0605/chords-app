@@ -24,7 +24,6 @@ class RegisterScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: backIcon(context),
-        centerTitle: true,
         title: Image.asset(
           "assets/images/logo.png",
           width: 180.w,

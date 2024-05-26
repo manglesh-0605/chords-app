@@ -8,6 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'global/global.dart';
+import 'view/splash.dart';
 import 'view_model/auth_provider.dart';
 import 'view_model/drawer_provider.dart';
 
@@ -45,10 +46,11 @@ class MyApp extends StatelessWidget {
               child: MaterialApp(
                 theme: ThemeData(
                   colorScheme:
-                      ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                      ColorScheme.fromSeed(seedColor: AppColors.primaryYellow),
                   useMaterial3: true,
                   scaffoldBackgroundColor: AppColors.bgColor,
                   appBarTheme: AppBarTheme(
+                      centerTitle: true,
                       backgroundColor: AppColors.bgColor,
                       foregroundColor: AppColors.white,
                       titleTextStyle:
@@ -83,7 +85,7 @@ class MyApp extends StatelessWidget {
                         color: AppColors.grey),
                   ),
                 ),
-                home: const AppBottomBar(),
+                home: const SplashScreen(),
               ),
             );
           }),
