@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SupportScreen extends StatelessWidget {
-  const SupportScreen({super.key});
+class ContactUsScreen extends StatelessWidget {
+  const ContactUsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class SupportScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: backIcon(context),
-        title: const Text("Support"),
+        title: const Text("Contact Us"),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -59,56 +59,51 @@ class SupportScreen extends StatelessWidget {
               ),
               spaceHeight(30.h),
               Text(
-                "Reach us through",
+                "Contact us",
                 style: textStyle(fontSize: 20.sp, weight: FontWeight.w500),
               ),
               spaceHeight(12.h),
               SizedBox(
-                width: screenWidth * 0.6,
                 child: Text(
-                  "Worship Paradise is also available on Whatsapp and Call/Chat Support",
+                  "Email : worshipparadise01@gmail.com",
                   textAlign: TextAlign.center,
                   style: textStyle(fontSize: 14.sp, weight: FontWeight.w400),
                 ),
               ),
-              spaceHeight(),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  height: 48.h,
-                  width: screenWidth * 0.6,
-                  padding: EdgeInsets.symmetric(horizontal: 20.w),
-                  decoration: BoxDecoration(
-                    color: const Color(0XFFCAFFD3),
-                    borderRadius: BorderRadius.circular(4.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.bgColor.withOpacity(0.1),
-                        blurRadius: 12.0,
-                        offset: const Offset(0, 6),
-                      )
-                    ],
+              spaceHeight(30.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () {},
+                    child: Image.asset(
+                      "assets/images/facebook_con.png",
+                      height: 30.h,
+                      width: 30.w,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        "assets/images/whatsapp.png",
-                        width: 24.w,
-                        height: 24.h,
-                        fit: BoxFit.fill,
-                      ),
-                      spaceWidth(8.w),
-                      Text(
-                        "Whatsapp",
-                        style: textStyle(
-                            weight: FontWeight.w500,
-                            color: const Color(0XFF4B4B4B)),
-                      ),
-                    ],
+                  spaceWidth(),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Image.asset(
+                      "assets/images/instagram.png",
+                      height: 30.h,
+                      width: 30.w,
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
+                  spaceWidth(),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Image.asset(
+                      "assets/images/twitter.png",
+                      height: 30.h,
+                      width: 30.w,
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ],
               ),
               spaceHeight(),
             ],

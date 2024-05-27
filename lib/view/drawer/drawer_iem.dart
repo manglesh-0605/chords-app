@@ -1,4 +1,7 @@
 import 'package:chords_app/res/colors.dart';
+import 'package:chords_app/view/auth/profile/profile.dart';
+import 'package:chords_app/view/playlist/resources.dart';
+import 'package:chords_app/view_model/bottom_bar_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +24,17 @@ class DrawerItem extends StatelessWidget {
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () async {
+                if (index == 0 || index == 3) {
+                  final tab =
+                      Provider.of<BottomBarProvider>(context, listen: false);
+                  tab.setPageView(4, const ProfileScreen());
+                  if (index == 3) {
+                    tab.setPageView(3, const ResourcesScreen());
+                  }
+                } else if (drawer.drawerMenuList[index]['class'] != null) {
+                  switchScreenPushRTL(
+                      context, drawer.drawerMenuList[index]['class']);
+                }
                 Scaffold.of(context).closeDrawer();
               },
               child: Container(

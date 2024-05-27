@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class OnBoardingProvider with ChangeNotifier {
+class OnBoardingProvider extends ChangeNotifier {
   PageController pageController = PageController();
   int _currentIndex = 0;
   int get currentIndex => _currentIndex;

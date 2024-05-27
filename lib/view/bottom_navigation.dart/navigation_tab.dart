@@ -1,4 +1,5 @@
 import 'package:chords_app/view/auth/profile/profile.dart';
+import 'package:chords_app/view/search/search.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -7,6 +8,8 @@ import '../../res/colors.dart';
 import '../../view_model/bottom_bar_provider.dart';
 import '../drawer/drawer.dart';
 import '../home.dart';
+import '../playlist/playlist.dart';
+import '../playlist/resources.dart';
 import 'tab_button.dart';
 
 class AppBottomBar extends StatelessWidget {
@@ -70,7 +73,7 @@ class AppBottomBar extends StatelessWidget {
                           text: "My Playlist",
                           onTap: () {
                             if (tab.selectedTab != 1) {
-                              tab.setPageView(1, const HomeScreen());
+                              tab.setPageView(1, const PlayList());
                             }
                           },
                           isSelected: tab.selectedTab == 1),
@@ -81,7 +84,7 @@ class AppBottomBar extends StatelessWidget {
                           text: "Search",
                           onTap: () {
                             if (tab.selectedTab != 2) {
-                              tab.setPageView(2, const HomeScreen());
+                              tab.setPageView(2, const SearchScreen());
                             }
                           },
                           isSelected: tab.selectedTab == 2),
@@ -92,7 +95,7 @@ class AppBottomBar extends StatelessWidget {
                           text: "Resources",
                           onTap: () {
                             if (tab.selectedTab != 3) {
-                              tab.setPageView(3, const HomeScreen());
+                              tab.setPageView(3, const ResourcesScreen());
                             }
                           },
                           isSelected: tab.selectedTab == 3),

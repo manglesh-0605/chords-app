@@ -2,6 +2,7 @@ import 'package:chords_app/res/colors.dart';
 
 import 'package:chords_app/view_model/bottom_bar_provider.dart';
 import 'package:chords_app/view_model/onboarding_provider.dart';
+import 'package:chords_app/view_model/playlist_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,6 +11,7 @@ import 'global/global.dart';
 import 'view/splash.dart';
 import 'view_model/auth_provider.dart';
 import 'view_model/drawer_provider.dart';
+import 'view_model/search_provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,6 +43,8 @@ class MyApp extends StatelessWidget {
                 ChangeNotifierProvider(create: (_) => AuthProvider()),
                 ChangeNotifierProvider(create: (_) => BottomBarProvider()),
                 ChangeNotifierProvider(create: (_) => DrawerProvider()),
+                ChangeNotifierProvider(create: (_) => PlayListProvider()),
+                ChangeNotifierProvider(create: (_) => SearchProvider()),
               ],
               child: MaterialApp(
                 theme: ThemeData(

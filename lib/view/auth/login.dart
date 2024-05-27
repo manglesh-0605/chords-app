@@ -96,7 +96,8 @@ class LoginScreen extends StatelessWidget {
               AppButton(
                 btnText: "Log in",
                 onPress: () {
-                  switchScreenPush(context, const AppBottomBar());
+                  Navigator.pop(context);
+                  switchScreenReplacement(context, const AppBottomBar());
                 },
               ),
               spaceHeight(10.h),

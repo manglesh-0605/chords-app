@@ -41,16 +41,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           children: [
                             Image.asset(
                               board.onBoardingPage[index]['image'].toString(),
-                              height: screenHeight * 0.6,
+                              height: screenHeight * 0.58,
                               width: screenWidth,
                               fit: BoxFit.fill,
                             ),
                           ],
                         ),
                         Positioned(
-                          bottom: 150.h,
+                          bottom: 152.h,
                           child: Container(
-                            width: screenWidth * 0.8,
+                            width: screenWidth * 0.84,
                             color: AppColors.bgColor,
                             child: Padding(
                               padding:

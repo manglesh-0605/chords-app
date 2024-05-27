@@ -65,6 +65,12 @@ switchScreenPushRTL(context, screen) {
   );
 }
 
+String alphabet(int index) {
+  return String.fromCharCodes(
+    Iterable.generate(1, (x) => 'a'.codeUnitAt(0) + index),
+  ).toUpperCase();
+}
+
 backIcon(BuildContext context) {
   return IconButton(
     icon: const Icon(
