@@ -1,9 +1,11 @@
+import 'package:chords_app/view/about_us.dart';
 import 'package:chords_app/view/auth/profile/profile.dart';
 import 'package:chords_app/view/auth/profile/support.dart';
 import 'package:flutter/material.dart';
 
 import '../view/contact_us.dart';
 import '../view/playlist/resources.dart';
+import '../view/request_song.dart';
 
 class DrawerProvider extends ChangeNotifier {
   List drawerMenuList = [
@@ -15,7 +17,7 @@ class DrawerProvider extends ChangeNotifier {
     {
       "name": "Request a Song",
       "icon": Icons.request_page_rounded,
-      "class": null,
+      "class": const RequestSong(),
     },
     {
       "name": "Help & Support",
@@ -35,7 +37,7 @@ class DrawerProvider extends ChangeNotifier {
     {
       "name": "About us",
       "icon": Icons.info_rounded,
-      "class": null,
+      "class": const AboutUs(),
     },
     {
       "name": "Contact us",

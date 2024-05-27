@@ -45,7 +45,7 @@ class MyPlayList extends StatelessWidget {
           Padding(
         padding: const EdgeInsets.only(top: 20),
         child: ListView.builder(
-          itemCount: 26,
+          itemCount: 3,
           itemBuilder: (context, index) {
             return Column(
               children: [

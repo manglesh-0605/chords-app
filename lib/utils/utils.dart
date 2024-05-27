@@ -169,4 +169,65 @@ class Utils {
       },
     );
   }
+
+  static bottomSheetRequestSong(BuildContext context) {
+    TextEditingController name = TextEditingController();
+    TextEditingController artist = TextEditingController();
+    TextEditingController youtube = TextEditingController();
+    TextEditingController spotify = TextEditingController();
+
+    return showModalBottomSheet(
+      isDismissible: false,
+      backgroundColor: AppColors.bgColor,
+      context: context,
+      enableDrag: false,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
+      builder: (BuildContext context) {
+        return SizedBox(
+          height: 390,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Column(
+              children: [
+                spaceHeight(),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        "Request Song",
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.ellipsis,
+                        style:
+                            textStyle(fontSize: 24.sp, weight: FontWeight.w700),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.clear,
+                        color: AppColors.white,
+                        size: 30.r,
+                      ),
+                    )
+                  ],
+                ),
+                spaceHeight(),
+                AppTextField(controller: name, hint: "Song Name"),
+                spaceHeight(),
+                AppTextField(controller: artist, hint: "Artist Name"),
+                spaceHeight(),
+                AppTextField(controller: youtube, hint: "Youtube Link"),
+                spaceHeight(),
+                AppTextField(controller: spotify, hint: "Spotify Link"),
+                spaceHeight(),
+                AppButton(btnText: "Submit", onPress: () {}),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 }
