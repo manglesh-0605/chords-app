@@ -3,6 +3,7 @@ import 'package:chords_app/res/colors.dart';
 import 'package:chords_app/view/auth/profile/notifications.dart';
 import 'package:chords_app/view/auth/profile/privacy_policy.dart';
 import 'package:chords_app/view/auth/profile/profile_details.dart';
+import 'package:chords_app/view/contact_us.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -166,13 +167,18 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   spaceWidth(10.w),
                   Expanded(
-                    child: Container(
-                      height: 84.h,
-                      color: AppColors.blackGrey,
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Support us",
-                        style: textStyle(weight: FontWeight.w400),
+                    child: GestureDetector(
+                      onTap: () {
+                        switchScreenPush(context, const SupportScreen());
+                      },
+                      child: Container(
+                        height: 84.h,
+                        color: AppColors.blackGrey,
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Support us",
+                          style: textStyle(weight: FontWeight.w400),
+                        ),
                       ),
                     ),
                   ),
@@ -182,13 +188,18 @@ class ProfileScreen extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      height: 84.h,
-                      color: AppColors.blackGrey,
-                      alignment: Alignment.center,
-                      child: Text(
-                        "Contact Support",
-                        style: textStyle(weight: FontWeight.w400),
+                    child: GestureDetector(
+                      onTap: () {
+                        switchScreenPush(context, const ContactUsScreen());
+                      },
+                      child: Container(
+                        height: 84.h,
+                        color: AppColors.blackGrey,
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Contact Support",
+                          style: textStyle(weight: FontWeight.w400),
+                        ),
                       ),
                     ),
                   ),

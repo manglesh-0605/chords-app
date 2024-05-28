@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../global/global.dart';
 import '../../../res/colors.dart';
+import '../../artist_info.dart';
 
 class ArtistTab extends StatelessWidget {
   const ArtistTab({super.key});
@@ -16,7 +17,9 @@ class ArtistTab extends StatelessWidget {
           itemCount: 5,
           itemBuilder: (context, index) {
             return GestureDetector(
-              onTap: () {},
+              onTap: () {
+                switchScreenPush(context, const ArtistInfo());
+              },
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 10.h),
                 child: Row(
