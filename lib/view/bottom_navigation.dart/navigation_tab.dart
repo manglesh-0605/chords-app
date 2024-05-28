@@ -1,6 +1,7 @@
 import 'package:chords_app/view/auth/profile/profile.dart';
 import 'package:chords_app/view/search/search.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import '../../global/global.dart';
@@ -26,7 +27,37 @@ class AppBottomBar extends StatelessWidget {
           }
         },
         child: Scaffold(
-          appBar: tab.selectedTab == 0 ? AppBar() : null,
+          appBar: tab.selectedTab == 0
+              ? AppBar(
+                  centerTitle: false,
+                  title: Text(
+                    "Worship Paradise",
+                    style: textStyle(fontSize: 20.sp),
+                  ),
+                  actions: [
+                    GestureDetector(
+                      onTap: () {},
+                      child: Image.asset(
+                        "assets/images/notification.png",
+                        width: 30.w,
+                        height: 30.h,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    spaceWidth(10.w),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Image.asset(
+                        "assets/images/settings.png",
+                        width: 30.w,
+                        height: 30.h,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    spaceWidth(),
+                  ],
+                )
+              : null,
           drawer: Container(
             color: AppColors.transparent,
             width: screenWidth,
