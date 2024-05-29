@@ -1,5 +1,6 @@
 import 'package:chords_app/global/global.dart';
 import 'package:chords_app/utils/utils.dart';
+import 'package:chords_app/view/main_chords.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -98,7 +99,7 @@ class EditPlayList extends StatelessWidget {
                       Expanded(
                         child: GestureDetector(
                           onTap: () {
-                            switchScreenPush(context, const EditPlayList());
+                            switchScreenPush(context, const MainChords());
                           },
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,

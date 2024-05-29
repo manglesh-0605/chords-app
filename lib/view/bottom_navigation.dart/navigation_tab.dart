@@ -1,5 +1,6 @@
 import 'package:chords_app/view/auth/profile/profile.dart';
 import 'package:chords_app/view/search/search.dart';
+import 'package:chords_app/view/setting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -46,7 +47,9 @@ class AppBottomBar extends StatelessWidget {
                     ),
                     spaceWidth(10.w),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        switchScreenPush(context, const SettingScreen());
+                      },
                       child: Image.asset(
                         "assets/images/settings.png",
                         width: 30.w,

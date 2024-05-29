@@ -94,12 +94,12 @@ class HomeScreen extends StatelessWidget {
                                 horizontal: 16.w, vertical: 16.h),
                             child: Column(
                               children: [
-                                Text(
-                                  "New English Songs",
-                                  style: textStyle(
-                                      fontSize: 20.sp, weight: FontWeight.w700),
-                                ),
-                                spaceHeight(10.h),
+                                // Text(
+                                //   "New English Songs",
+                                //   style: textStyle(
+                                //       fontSize: 20.sp, weight: FontWeight.w700),
+                                // ),
+                                // spaceHeight(10.h),
                                 Text(
                                   "New English Songs",
                                   style: textStyle(
