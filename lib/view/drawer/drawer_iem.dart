@@ -1,5 +1,6 @@
 import 'package:chords_app/res/colors.dart';
 import 'package:chords_app/view/auth/profile/profile.dart';
+import 'package:chords_app/view/home.dart';
 import 'package:chords_app/view/playlist/resources.dart';
 import 'package:chords_app/view_model/bottom_bar_provider.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class DrawerItem extends StatelessWidget {
                 if (index == 0 || index == 3) {
                   final tab =
                       Provider.of<BottomBarProvider>(context, listen: false);
-                  tab.setPageView(4, const ProfileScreen());
+                  tab.setPageView(4, const HomeScreen());
                   if (index == 3) {
                     tab.setPageView(3, const ResourcesScreen());
                   }
@@ -58,7 +59,7 @@ class DrawerItem extends StatelessWidget {
                       ),
                     ],
                   ),
-                  index == 4 || index == 6 || index == 8
+                  index == 4 || index == 7 || index == 9
                       ? Padding(
                           padding: EdgeInsets.only(top: 16.h),
                           child: Divider(
