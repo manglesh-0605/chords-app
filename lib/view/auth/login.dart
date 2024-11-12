@@ -24,16 +24,16 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: backIcon(context),
-        title: Image.asset(
-          "assets/images/logo.png",
-          width: 180.w,
-        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             children: [
+              Image.asset(
+                "assets/images/logo.png",
+                width: 180.w,
+              ),
               spaceHeight(40.h),
               Text(
                 "Login to your account",
@@ -74,21 +74,53 @@ class LoginScreen extends StatelessWidget {
               ),
               spaceHeight(),
               Row(
+                mainAxisAlignment: MainAxisAlignment
+                    .spaceBetween, // Positions items at opposite ends
                 children: [
-                  Consumer<AuthProvider>(builder: (context, auth, child) {
-                    return Checkbox(
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      value: auth.isRemember,
-                      onChanged: (value) {
-                        auth.setRemember(value!);
+                  // First Component (Remember Me)
+                  Row(
+                    children: [
+                      Consumer<AuthProvider>(
+                        builder: (context, auth, child) {
+                          return Checkbox(
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                            value: auth.isRemember,
+                            onChanged: (value) {
+                              auth.setRemember(value!);
+                            },
+                            activeColor: AppColors.white,
+                            checkColor: AppColors.bgColor,
+                          );
+                        },
+                      ),
+                      Text(
+                        'Remember me',
+                        style:
+                            textStyle(fontSize: 12.sp, weight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
+
+                  // Spacer for some space between components if needed
+                  SizedBox(width: 10.w), // Optional, adjust width as needed
+
+                  // Second Component (Forgot Password)
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: GestureDetector(
+                      onTap: () {
+                        switchScreenPush(context, const ForgotScreen());
                       },
-                      activeColor: AppColors.white,
-                      checkColor: AppColors.bgColor,
-                    );
-                  }),
-                  Text(
-                    'Remember me',
-                    style: textStyle(fontSize: 12.sp, weight: FontWeight.w400),
+                      child: Text(
+                        "Forgot the password ?",
+                        style: textStyle(
+                          fontSize: 12.sp,
+                          weight: FontWeight.w500,
+                          color: AppColors.primaryYellow,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -99,22 +131,6 @@ class LoginScreen extends StatelessWidget {
                   Navigator.pop(context);
                   switchScreenReplacement(context, const AppBottomBar());
                 },
-              ),
-              spaceHeight(10.h),
-              Align(
-                alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () {
-                    switchScreenPush(context, const ForgotScreen());
-                  },
-                  child: Text(
-                    "Forgot the password ?",
-                    style: textStyle(
-                        fontSize: 12.sp,
-                        weight: FontWeight.w500,
-                        color: AppColors.primaryYellow),
-                  ),
-                ),
               ),
               spaceHeight(30.h),
               Row(

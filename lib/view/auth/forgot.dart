@@ -14,16 +14,16 @@ class ForgotScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: backIcon(context),
-        title: Image.asset(
-          "assets/images/logo.png",
-          width: 180.w,
-        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             children: [
+              Image.asset(
+                "assets/images/logo.png",
+                width: 180.w,
+              ),
               spaceHeight(40.h),
               Text(
                 "Forgot Password",

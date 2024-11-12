@@ -24,16 +24,16 @@ class RegisterScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: backIcon(context),
-        title: Image.asset(
-          "assets/images/logo.png",
-          width: 180.w,
-        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             children: [
+              Image.asset(
+                "assets/images/logo.png",
+                width: 180.w,
+              ),
               spaceHeight(40.h),
               Text(
                 "Register an Account",
@@ -88,25 +88,6 @@ class RegisterScreen extends StatelessWidget {
                 icon: Icons.phone_android_rounded,
               ),
               spaceHeight(),
-              Row(
-                children: [
-                  Consumer<AuthProvider>(builder: (context, auth, child) {
-                    return Checkbox(
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      value: auth.isRemember,
-                      onChanged: (value) {
-                        auth.setRemember(value!);
-                      },
-                      activeColor: AppColors.white,
-                      checkColor: AppColors.bgColor,
-                    );
-                  }),
-                  Text(
-                    'Remember me',
-                    style: textStyle(fontSize: 12.sp, weight: FontWeight.w400),
-                  ),
-                ],
-              ),
               spaceHeight(),
               AppButton(
                 btnText: "Register now",
