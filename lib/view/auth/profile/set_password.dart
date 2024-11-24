@@ -118,19 +118,35 @@ class SetPassword extends StatelessWidget {
                     valueListenable: obscureNewPassword,
                   ),
                   spaceHeight(60.h),
-                  Container(
-                    height: 40.h,
-                    color: AppColors.blackGrey,
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Update Password",
-                      style: textStyle(weight: FontWeight.w400),
-                    ),
-                  ),
                 ],
               ),
             ),
           ),
+          // Positioned Update Password Button
+          Positioned(
+            bottom: 100.h, // 100px space from the bottom
+            left: 16.w, // Side padding
+            right: 16.w, // Side padding
+            child: SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Add your button action here
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.blackGrey,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero
+                  )
+                ),
+                child: Text(
+                  "Update Password",
+                  style: textStyle(weight: FontWeight.w400),
+                ),
+              ),
+            ),
+          ),
+          // Positioned App Banner
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(

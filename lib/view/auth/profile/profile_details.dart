@@ -81,6 +81,99 @@ class ProfileDetails extends StatelessWidget {
                       ),
                     ),
                   ),
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 16.h),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Google Button
+                        Expanded(
+                          child: Container(
+                            height: 50.h,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.grey, // Thin gray border
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: TextButton(
+                              onPressed: () {
+                                // Add your Google linking logic here
+                              },
+                              style: TextButton.styleFrom(
+                                foregroundColor:
+                                    Colors.black, // Text and icon color
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    'assets/images/google.png', // Replace with your Google icon asset path
+                                    width: 25.w,
+                                    height: 25.h,
+                                  ),
+                                  SizedBox(width: 8.w),
+                                  Text(
+                                    "Link Google",
+                                    style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 16.w), // Space between buttons
+
+                        // Facebook Button
+                        Expanded(
+                          child: Container(
+                            height: 50.h,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.grey, // Thin gray border
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: TextButton(
+                              onPressed: () {
+                                // Add your Facebook linking logic here
+                              },
+                              style: TextButton.styleFrom(
+                                foregroundColor:
+                                    Colors.black, // Text and icon color
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    'assets/images/facebook.png', // Replace with your Facebook icon asset path
+                                     width: 25.w,
+                                    height: 25.h,
+                                  ),
+                                  SizedBox(width: 8.w),
+                                  Text(
+                                    "Link Facebook",
+                                    style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   GestureDetector(
                     onTap: () {
                       switchScreenPush(context, const SetPassword());
