@@ -40,7 +40,7 @@ class CollectionView extends StatelessWidget {
                     Container(
                       height: 24.h,
                       alignment: Alignment.center,
-                      color: AppColors.grey,
+                      color: AppColors.black,
                       margin: EdgeInsets.symmetric(
                           horizontal: 10.w, vertical: 10.h),
                       padding: EdgeInsets.symmetric(horizontal: 10.w),
@@ -51,22 +51,48 @@ class CollectionView extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    Text(
-                      "1255",
-                      style:
-                          textStyle(fontSize: 14.sp, weight: FontWeight.w400),
-                    ),
-                    spaceWidth(10.w),
-                    Icon(
-                      Icons.thumb_up_outlined,
-                      color: AppColors.white,
-                      size: 26.r,
-                    )
+                    Container(
+                        height: 24.h,
+                        alignment: Alignment.center,
+                        color: AppColors.black,
+                        margin: EdgeInsets.symmetric(
+                            horizontal: 10.w, vertical: 10.h),
+                        padding: EdgeInsets.symmetric(horizontal: 10.w),
+                        child: Row(
+                          children: [
+                            Text(
+                              "1255",
+                              style: textStyle(
+                                  fontSize: 14.sp, weight: FontWeight.w400),
+                            ),
+                            spaceWidth(10.w),
+                            Icon(
+                              Icons.thumb_up_outlined,
+                              color: AppColors.white,
+                              size: 20.r,
+                            )
+                          ],
+                        )),
                   ],
                 ),
               ],
             ),
             spaceHeight(),
+            Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Colors.white54, // Color of the border
+                    width: 2.0, // Width of the border
+                  ),
+                ),
+              ),
+              margin: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.only(bottom: 20.0),
+              child: Text(
+                  "Sunday Worship songs to practise with your band and easy to play",
+                  style: TextStyle(color: Colors.white54,)),
+            ),
             ListView.builder(
                 itemCount: 10,
                 physics: const NeverScrollableScrollPhysics(),
